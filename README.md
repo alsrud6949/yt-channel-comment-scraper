@@ -16,4 +16,4 @@ CLIENT_SECRET_FILE={the file path of json file downloaded at the first step}
 ```
 3. Run `main.py`
 - Channel ID: ID starting with "UC"
-- Start Date: Format %Y%m%d ex. 20230401
+- Start Date: Format %Y-%m-%d ex. 2023-04-01
