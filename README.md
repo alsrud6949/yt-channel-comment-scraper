@@ -1,7 +1,7 @@
 # yt-channel-comment-analysis
 
 ### Background
-For channels whose growth stagnates, Collab can help them to overcome it with data analysis like creator report and comment analysis report.
+For channels whose growth stagnates, comment analysis can help them to overcome it, capturing what viewers or subscribers like or dislike.
 
 ### Objective
 - To monitor the reaction of viewers of the channel in detail
