@@ -12,14 +12,7 @@ For channels whose growth stagnates, comment analysis can help them to overcome 
 1. Download service account json file from GCP - use `ADD KEY`
 2. Make `.env` file
 ```commandline
-PROJECT_ID=
-CREDENTIAL_BUCKET=
-CREDENTIAL_FILE=
 CLIENT_SECRET_FILE={the file path of json file downloaded at the first step}
-GCP_BUCKET=
-LOCAL_BASE_PATH=
-GCP_BASE_PATH=
-PRESENTATION_ID=
 ```
 3. Run `main.py`
 - Channel ID: ID starting with "UC"
