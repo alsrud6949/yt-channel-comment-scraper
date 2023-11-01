@@ -69,7 +69,6 @@ def make_comment_df(data):
                 result_dict.update(reply_snippet)
                 result_dict['authorChannelId'] = result_dict['authorChannelId'].get('value')
                 result.append(result_dict)
-
     return pd.DataFrame(result)
 
 def get_comments(video_id):
@@ -119,7 +118,11 @@ if __name__ == '__main__':
     channel_id = input("Put your Channel ID starting with 'UC': ")
     startdate = input("Assign start date you would like to obtain information from (format: %Y-%m-%d): ")
     video_info, comments = main(channel_id, startdate)
+    comments["textDisplay"] = comments["textDisplay"].apply(lambda x: x.replace("\n", ""))
+    comments["textDisplay"] = comments["textDisplay"].apply(lambda x: x.replace("\r", ""))
+    comments["textOriginal"] = comments["textOriginal"].apply(lambda x: x.replace("\n", ""))
+    comments["textOriginal"] = comments["textOriginal"].apply(lambda x: x.replace("\r", ""))
 
-    Path(f"output/{channel_id}").mkdir(parents=True, exist_ok=True)
+    Path(f"output/{channel_id}/recent_from_{startdate}").mkdir(parents=True, exist_ok=True)
     video_info.to_csv(f"output/{channel_id}/recent_from_{startdate}/video_info.csv",index=False)
     comments.to_csv(f"output/{channel_id}/recent_from_{startdate}/comments.csv",index=False)
